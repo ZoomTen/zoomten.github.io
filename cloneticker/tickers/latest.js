@@ -3,6 +3,7 @@
 // Last updated on:
 // 2017-25-01
 
+clear_contents();
 content_add(0,"<a href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>");
 content_add(1,"Nulla hendrerit nisl vitae pretium <a href='#'>tempor.</a>");
 content_add(2,"Nulla condimentum <a href='#'>magna sit amet elit</a> placerat aliquet.");
