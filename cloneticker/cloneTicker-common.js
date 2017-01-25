@@ -22,6 +22,10 @@ function content_add(id,contents){
 	content[of][1] = contents;
 }
 
+function clear_contents(){
+	content = [];
+}
+
 function ticker_load_horizontal(){
 // Select the snorts
 	thd = document.getElementById("cloneTicker-horizontal");
@@ -41,36 +45,16 @@ function ticker_load_horizontal(){
 // Create content holder.
 	thc = document.createElement('div');
 	thm.appendChild(thc);
-	if ((typeof(ticker_id) != "undefined") && (ticker_id != null)){
-	// Create script element.
-		ths = document.createElement('script');
-		ths.type = "text/javascript";
-		ths.src = tickerbase + "/" + ticker_id + ".js";
-		thc.append(ths);
-	// Clear ticker contents.
-		thx = "";
-	// Wait for it to load, then fill it up.
-		setTimeout(function(){
-		for (a = 0; a < content.length; a++){
-			thx += "<b class=\"ticker-title ticker-title-generic ticker-title-" + content[a][0] +"\">";
-			thx += categories[content[a][0]];
-			thx += "</b>&nbsp;";
-			thx += content[a][1] + "&nbsp;&nbsp;&nbsp;";
-		}
-	// Refresh marquee
-		thm.parentNode.removeChild(thm);
-	// Wait a while because shit can go way too fast
-		setTimeout(function(){
-		thd.appendChild(thm);
-		thm.appendChild(thc);
-		},50);
-	// Done.
-		thc.innerHTML = thx;
-		},950);
-		
-	} else {
-		thc.innerHTML = "<b>No ticker ID set!</b>";
+	thx = "";
+	// Fill it up.
+	for (a = 0; a < content.length; a++){
+		thx += "<b class=\"ticker-title ticker-title-generic ticker-title-" + content[a][0] +"\">";
+		thx += categories[content[a][0]];
+		thx += "</b>&nbsp;";
+		thx += content[a][1] + "&nbsp;&nbsp;&nbsp;";
 	}
+	// Done.
+	thc.innerHTML = thx;
 }
 
 function ticker_load_vertical(){
@@ -91,34 +75,14 @@ function ticker_load_vertical(){
 // Create content holder.
 	tvc = document.createElement('div');
 	tvm.appendChild(tvc);
-	if ((typeof(ticker_id) != "undefined") && (ticker_id != null)){
-	// Create script element.
-		tvs = document.createElement('script');
-		tvs.type = "text/javascript";
-		tvs.src = tickerbase + "/" + ticker_id + ".js";
-		tvc.append(tvs);
 	// Clear ticker contents.
 		tvx = "";
 	// Wait for it to load, then fill it up.
-		setTimeout(function(){
 		for (a = 0; a < content.length; a++){
 			tvx += "<b class=\"ticker-title ticker-title-generic ticker-title-" + content[a][0] +"\">"
 			tvx += categories[content[a][0]];
 			tvx += "</b><br>";
 			tvx += content[a][1] + "<br><br>";
 		}
-	// Refresh marquee
-		tvm.parentNode.removeChild(tvm);
-	// Wait a while because shit can go way too fast
-		setTimeout(function(){
-		tvd.appendChild(tvm);
-		tvm.appendChild(tvc);
-		},50);
-	// Done.
 		tvc.innerHTML = tvx;
-		},950);
-		
-	} else {
-		tvc.innerHTML = "<b>No ticker ID set!</b>";
-	}
 }
