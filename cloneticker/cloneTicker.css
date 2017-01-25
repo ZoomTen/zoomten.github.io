@@ -1,0 +1,34 @@
+/* Ticker CSS */
+
+.ticker-main{
+	font-family:"Helvetica Neue", Helvetica, Arial, "Liberation Sans", Arimo, sans-serif;
+	border:1px solid rgba(0,0,0,0.2);
+	box-shadow: 0 0 3px rgba(0,0,0,0.2);
+	border-radius:3px;
+	background: white;
+	font-size: 14px;
+}
+.ticker-title{
+	padding:0 9px;
+	border-radius:7px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Ticker category title colors*/
+
+.ticker-title-generic{ /* fallback */
+	color: white;
+	background: grey;
+}
+.ticker-title-0{
+	color: white;
+	background: #880000;
+}
+.ticker-title-1{
+	color: white;
+	background: #008800;
+}
+.ticker-title-2{
+	color: white;
+	background: #000088;
+}

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+	<title>ZoomTen cloneTicker Demo</title>
+	<meta charset="UTF-8">
+	<style>
+		html{
+			font-family:Helvetica, Arial, sans-serif;
+		}
+		body{
+			margin:4%;
+			background-color: #143ea9;
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QEZCxkQi18FvwAAAAh0RVh0Q29tbWVudAD2zJa/AAAAEElEQVQI12MQsVvJ9PvzRwALJQPdQuC2rAAAAABJRU5ErkJggg==);
+			background-attachment: fixed;
+		}
+		h2{
+			border-bottom:1px solid grey;
+			margin-bottom:5px;
+		}
+		h1, p{
+			color: white;
+			text-shadow:1px 1px 4px rgba(0,0,0,0.5);
+		}
+	</style>
+	
+	
+	<link href="cloneTicker.css" rel="stylesheet" type="text/css">
+	<script src="cloneTicker-common.js"></script>
+	<script src="cloneTicker-categories.js"></script>
+</head>
+
+<body>
+	<h1 align="center">cloneTicker Demo</h1>
+	<p>This is a demonstration of <em><b>cloneTicker</b></em>, a sort-of "modern" HTML+JS ticker "inspired" by ancient websites.</p>
+	<table border="0" style="border:1px solid #888888; background:white; box-shadow:0 0 10px rgba(0,0,0,0.5);" align="center">
+	<th colspan="2">Horizontal Ticker</th>
+	<tr>
+	<td>
+	<div id="cloneTicker-horizontal" style="width:200px;">Horizontal ticker. Javascript disabled.<script>ticker_id="latest"; ticker_load_horizontal();</script></div></td><td><textarea readonly style="resize:none; width:200px; height:200px;">&lt;div id=&quot;cloneTicker-horizontal&quot; style=&quot;width:200px;&quot;&gt;Horizontal ticker. Javascript disabled.&lt;script&gt;ticker_id=&quot;latest&quot;; ticker_load_horizontal();&lt;&#47;script&gt;&lt;&#47;div&gt;</textarea></td>
+	<tr>
+	<th colspan="2">Vertical Ticker</th>
+	<tr>
+	<td>
+	<div id="cloneTicker-vertical" style="width:200px; height:200px;">Vertical ticker. Javascript disabled.<script>ticker_id="latest"; ticker_load_vertical();</script></div></td><td><textarea readonly style="resize:none; width:200px; height:200px;">&lt;div id=&quot;cloneTicker-vertical&quot; style=&quot;width:200px; height:200px;&quot;&gt;Vertical ticker. Javascript disabled.&lt;script&gt;ticker_id=&quot;latest&quot;; ticker_load_vertical();&lt;&#47;script&gt;&lt;&#47;div&gt;</textarea></td>
+	</table>
+</body>
+
+</html>
