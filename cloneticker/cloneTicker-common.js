@@ -12,78 +12,113 @@ function cat_add(catname){
 	categories.push(catname);
 }
 
-
 function content_add(id,contents){
-	offset = content.length;
-	
-	content[offset] = new Array(2);
-	
-	content[offset][0] = id;
-	content[offset][1] = contents;
+// Get next content slot
+	of = content.length;
+// Create new array for the offset
+	content[of] = new Array(2);
+// Fill the array
+	content[of][0] = id;
+	content[of][1] = contents;
 }
 
-
 function ticker_load_horizontal(){
-	ticker_horiz_div = document.getElementById("cloneTicker-horizontal");
-	
-	ticker_horiz_div.innerHTML = "<marquee direction=\"left\" onmouseout=\"this.start();\" onmouseover=\"this.stop();\" scrollamount=\"2\" scrolldelay=\"30\" truespeed=\"\" class=\"ticker-main ticker-main-horizontal\"><span id=\"ticker-id-horizontal\"></span></marquee>";
-	
-	ticker_horiz_marquee = document.getElementById("ticker-id-horizontal");
-	
+// Select the snorts
+	thd = document.getElementById("cloneTicker-horizontal");
+// Create marquee.
+	thm = document.createElement('marquee');
+	thm.setAttribute("direction", "left");
+	thm.setAttribute("scrollamount", "1");
+	thm.setAttribute("height", "14");
+	thm.setAttribute("scrolldelay", "30");
+	thm.setAttribute("truespeed", "");
+	thm.setAttribute("class", "ticker-main ticker-main-horizontal");
+	thm.onmouseout = function(){this.start();}
+	thm.onmouseover = function(){this.stop();}
+// Replace div with marquee.
+	thd.innerHTML = "";
+	thd.appendChild(thm);
+// Create content holder.
+	thc = document.createElement('div');
+	thm.appendChild(thc);
 	if ((typeof(ticker_id) != "undefined") && (ticker_id != null)){
-		ticker_horiz_script = document.createElement('script');
-		ticker_horiz_script.setAttribute("type","text/javascript");
-		ticker_horiz_script.setAttribute("src", tickerbase + "/" + ticker_id + ".js");
-		
-		ticker_horiz_marquee.append(ticker_horiz_script);
-		
-		ticker_horiz_contents = "";
+	// Create script element.
+		ths = document.createElement('script');
+		ths.type = "text/javascript";
+		ths.src = tickerbase + "/" + ticker_id + ".js";
+		thc.append(ths);
+	// Clear ticker contents.
+		thx = "";
+	// Wait for it to load, then fill it up.
 		setTimeout(function(){
-			for (a = 0; a < content.length; a++){
-				ticker_horiz_contents += "<b class=\"ticker-title ticker-title-generic ticker-title-" + content[a][0] +"\">";
-				ticker_horiz_contents += categories[content[a][0]];
-				ticker_horiz_contents += "</b>&nbsp;";
-				ticker_horiz_contents += content[a][1] + "&nbsp;&nbsp;&nbsp;";
-			}
-			ticker_horiz_marquee.innerHTML = ticker_horiz_contents;
-		}, 0);
+		for (a = 0; a < content.length; a++){
+			thx += "<b class=\"ticker-title ticker-title-generic ticker-title-" + content[a][0] +"\">";
+			thx += categories[content[a][0]];
+			thx += "</b>&nbsp;";
+			thx += content[a][1] + "&nbsp;&nbsp;&nbsp;";
+		}
+	// Refresh marquee
+		thm.parentNode.removeChild(thm);
+	// Wait a while because shit can go way too fast
+		setTimeout(function(){
+		thd.appendChild(thm);
+		thm.appendChild(thc);
+		},50);
+	// Done.
+		thc.innerHTML = thx;
+		},950);
 		
 	} else {
-		ticker_horiz_marquee.innerHTML = "<b>No ticker ID set!</b>";
+		thc.innerHTML = "<b>No ticker ID set!</b>";
 	}
 }
 
-
 function ticker_load_vertical(){
-	ticker_vertical_div = document.getElementById("cloneTicker-vertical");
-	
-	// Add crap to #cloneTicker-vertical
-	ticker_vertical_div.innerHTML = "<marquee direction=\"up\" onmouseout=\"this.start();\" onmouseover=\"this.stop();\" scrollamount=\"1\" scrolldelay=\"30\" truespeed=\"\" class=\"ticker-main ticker-main-vertical\"><span id=\"ticker-id-vertical\"></span></marquee>";
-	
-	// Grab the newly-created span
-	ticker_vertical_marquee = document.getElementById("ticker-id-vertical");
-	
+// Select the snorts
+	tvd = document.getElementById("cloneTicker-vertical");
+// Create marquee.
+	tvm = document.createElement('marquee');
+	tvm.setAttribute("direction", "up");
+	tvm.setAttribute("scrollamount", "1");
+	tvm.setAttribute("scrolldelay", "30");
+	tvm.setAttribute("truespeed", "");
+	tvm.setAttribute("class", "ticker-main ticker-main-vertical");
+	tvm.onmouseout = function(){this.start();}
+	tvm.onmouseover = function(){this.stop();}
+// Replace div with marquee.
+	tvd.innerHTML = "";
+	tvd.appendChild(tvm);
+// Create content holder.
+	tvc = document.createElement('div');
+	tvm.appendChild(tvc);
 	if ((typeof(ticker_id) != "undefined") && (ticker_id != null)){
-		// Insert script to span...
-		ticker_vertical_script = document.createElement('script');
-		ticker_vertical_script.setAttribute("type","text/javascript");
-		ticker_vertical_script.setAttribute("src", tickerbase + "/" + ticker_id + ".js");
-		
-		ticker_vertical_marquee.append(ticker_vertical_script);
-		
-		// Parse contents...
-		ticker_vertical_contents = "";
+	// Create script element.
+		tvs = document.createElement('script');
+		tvs.type = "text/javascript";
+		tvs.src = tickerbase + "/" + ticker_id + ".js";
+		tvc.append(tvs);
+	// Clear ticker contents.
+		tvx = "";
+	// Wait for it to load, then fill it up.
 		setTimeout(function(){
-			for (a = 0; a < content.length; a++){
-				ticker_vertical_contents += "<b class=\"ticker-title ticker-title-generic ticker-title-" + content[a][0] +"\">"
-				ticker_vertical_contents += categories[content[a][0]];
-				ticker_vertical_contents += "</b><br>";
-				ticker_vertical_contents += content[a][1] + "<br><br>";
-			}
-			ticker_vertical_marquee.innerHTML = ticker_vertical_contents;
-		}, 0);
+		for (a = 0; a < content.length; a++){
+			tvx += "<b class=\"ticker-title ticker-title-generic ticker-title-" + content[a][0] +"\">"
+			tvx += categories[content[a][0]];
+			tvx += "</b><br>";
+			tvx += content[a][1] + "<br><br>";
+		}
+	// Refresh marquee
+		tvm.parentNode.removeChild(tvm);
+	// Wait a while because shit can go way too fast
+		setTimeout(function(){
+		tvd.appendChild(tvm);
+		tvm.appendChild(tvc);
+		},50);
+	// Done.
+		tvc.innerHTML = tvx;
+		},950);
 		
 	} else {
-		ticker_vertical_marquee.innerHTML = "<b>No ticker ID set!</b>";
+		tvc.innerHTML = "<b>No ticker ID set!</b>";
 	}
 }
