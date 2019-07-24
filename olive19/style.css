@@ -18,7 +18,7 @@ body { font-family: "Montserrat", sans-serif; margin: 0; font-size: 1em; line-he
 
 a { color: #497318; }
 
-a.button { text-decoration: none; padding: 8px 16px; margin: 8px; border-radius: 10px; }
+a.button { text-decoration: none; padding: 12px 20px; margin: 8px; border-radius: 10px; box-shadow: inset 0 0 0 2px #497318; }
 
 nav#menu-holder { z-index: 2; background-color: rgba(27, 48, 12, 0); height: 60px; padding: 0 5%; color: #fff; position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; transition: all .5s; }
 nav#menu-holder.solid { background-color: #1B300C; height: 70px; box-shadow: 0 0 16px rgba(0, 0, 0, 0.4); }
@@ -49,17 +49,18 @@ section.featured a { color: white; }
 section#intro { font-weight: 400; border-top: none; text-align: left; font-size: 1.2em; background-image: linear-gradient(132deg, #1c3c2b 0%, #475e2d 100%), url("assets/IMG_7369.JPG"); background-size: cover; background-attachment: fixed; background-position: center; background-blend-mode: screen; /*background-color: $theme-color;*/ color: white; line-height: .8; height: 105vh; padding: 5em 2em; display: flex; }
 section#intro h1, section#intro h2, section#intro h3, section#intro h4, section#intro h5, section#intro h6 { text-align: inherit; }
 section#intro .versionnumber { display: block; font-size: .9em; line-height: 1.75; color: #97d94b; }
-section#intro .skiparrow { padding-top: 2em; font-size: 1.5em; text-align: center; animation: wibble .7s infinite alternate; position: relative; }
-section#intro .skiparrow a { color: #fff; text-decoration: none; }
+section#intro .skiparrow { padding-top: 2em; text-align: center; animation: wibble .7s infinite alternate; position: relative; }
+section#intro .skiparrow a { text-decoration: none; font-size: 1.5em; width: 1.5em; height: 1.5em; background-image: url("assets/Homepage_Triangle.svg"); background-size: 1.5em 1.5em; background-repeat: no-repeat; }
+section#intro .skiparrow a:before { content: '▼'; color: transparent; }
 @media screen and (max-width: 799px) { section#intro { font-size: 1em; line-height: 1; } }
 @media screen and (max-height: 499px) { section#intro { font-size: .8em; line-height: 1; } }
 section#intro .content { margin: auto; width: 28em; }
 section#intro .logo { width: 8em; height: 8em; background-size: 8em 8em; background-image: url("assets/olive-logo-joined-white.svg"); }
 section#intro #mainbuttons { display: flex; flex-direction: row; flex-wrap: wrap; }
-section#intro a.button { color: #fff; border: 2px solid #fff; transition: box-shadow .2s, color .2s, background-color .2s; box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4); }
-section#intro a.button:hover { background-color: rgba(255, 255, 255, 0.2); box-shadow: 0 5px 24px rgba(0, 0, 0, 0.7); }
-section#intro a.button.cta { background-color: #fff; color: #497318; font-weight: bold; border: 2px solid #fff; }
-section#intro a.button.cta:hover { background-color: #497318; color: #fff; border: 2px solid #497318; }
+section#intro a.button { display: inline-block; color: #fff; transition: box-shadow .2s, color .2s, background-color .2s; box-shadow: inset 0 0 0 2px #fff, 0 3px 14px rgba(0, 0, 0, 0.4); }
+section#intro a.button:hover { background-color: rgba(255, 255, 255, 0.2); box-shadow: inset 0 0 0 2px #fff, 0 5px 24px rgba(0, 0, 0, 0.7); }
+section#intro a.button.cta { box-shadow: 0; background-color: #fff; color: #497318; font-weight: bold; box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4); }
+section#intro a.button.cta:hover { background-color: #497318; color: #fff; box-shadow: 0 5px 24px rgba(0, 0, 0, 0.7); }
 
 ul#download-listing input#windows-builds + label span.title, ul#download-listing input#mac-builds + label span.title, ul#download-listing input#linux-builds + label span.title, ul#download-listing input#other-builds + label span.title, ul#download-listing input#windows-builds + label span.subtitle, ul#download-listing input#mac-builds + label span.subtitle, ul#download-listing input#linux-builds + label span.subtitle, ul#download-listing input#other-builds + label span.subtitle { display: block; }
 
