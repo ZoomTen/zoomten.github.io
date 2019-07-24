@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Olive Video Editor</title>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='#1B300C' name='theme-color'>
+<link href='style.css' rel='stylesheet'>
+</head>
+<body>
+<section class='featured' id='download'>
+<div class='content'>
+<h1>Download Olive</h1>
+<h2>Release Binaries</h2>
+<p>
+You are two steps away from a blazing-fast
+video editing experience! Choose your operating
+system, and select a download. We hope you enjoy
+Olive as much as we did making it!
+</p>
+<p>
+All platforms listed here are officially maintained
+by Olive Team. Pointers to unofficial builds are
+over <a href="#">here</a>.
+</p>
+<p>
+The latest version of Olive is currently
+<strong>0.2.0prealpha</strong>
+.
+</p>
+<ul id='download-listing'>
+<li>
+<input hidden id='windows-builds' type='checkbox'>
+<label for='windows-builds'>
+<div class='field-box'>
+<span class='title'>Windows</span>
+<span class='subtitle'>(Windows 7+)</span>
+</div>
+</label>
+<ul class='links-list'>
+<li>
+<a href='#'>
+32-bit Installer
+</a>
+</li>
+<li>
+<a href='#'>
+64-bit Installer
+</a>
+</li>
+<li>
+<a href='#'>
+32-bit Portable
+</a>
+</li>
+<li>
+<a href='#'>
+64-bit Portable
+</a>
+</li>
+</ul>
+</li>
+<li>
+<input hidden id='mac-builds' type='checkbox'>
+<label for='mac-builds'>
+<div class='field-box'>
+<span class='title'>macOS</span>
+<span class='subtitle'>(OS X 10.12+)</span>
+</div>
+</label>
+<ul class='links-list'>
+<li>
+<a href='#'>
+Universal Binary
+</a>
+</li>
+</ul>
+</li>
+<li>
+<input hidden id='linux-builds' type='checkbox'>
+<label for='linux-builds'>
+<div class='field-box'>
+<span class='title'>Linux</span>
+<span class='subtitle'>(various distros)</span>
+</div>
+</label>
+<ul class='links-list'>
+<li>
+<a href='#'>
+Instructions for Ubuntu 18.04, Linux Mint
+</a>
+</li>
+<li>
+<a href='#'>
+Instructions for Snap
+</a>
+</li>
+<li>
+<a href='#'>
+Instructions for Appimage
+</a>
+</li>
+<li>
+<a href='#'>
+Instructions for Other Distros
+</a>
+</li>
+</ul>
+</li>
+<li>
+<input hidden id='other-builds' type='checkbox'>
+<label for='other-builds'>
+<div class='field-box'>
+<span class='title'>Other builds</span>
+<span class='subtitle'>Archives, debug, etc.</span>
+</div>
+</label>
+<ul class='links-list'>
+<li>
+<a href='#'>
+Browse all released builds
+</a>
+</li>
+<li>
+<a href='#'>
+Download old versions
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<p>
+For information on how to compile Olive yourself,
+see the below section.
+</p>
+</div>
+</section>
+<section id='compile'>
+<div class='content'>
+<h2>Compile from Source</h2>
+<p>
+(outdated, this is copied and pasted for content)
+</p>
+<div>
+<p>
+<b>
+<i>So you think you can compile Olive yourself?</i>
+</b>
+</p>
+<p>...Well, you're right!</p>
+<p>Olive is open source meaning all the source code is available to users for them to modify themselves and compile on any platform they see fit.</p>
+<p>
+Olive currently has two major dependencies:
+<b>Qt 5.5+</b>
+and
+<b>FFmpeg 3.4+</b>.
+</p>
+<div class='toc'>
+<span>
+&#8226;
+<a href='#win32'>Compiling on Windows</a>
+</span>
+<br>
+<span>
+&#8226;
+<a href='#mac'>Compiling on macOS</a>
+</span>
+<br>
+<span>
+&#8226;
+<a href='#linux'>Compiling on Linux</a>
+</span>
+<br>
+</div>
+<a id='win32'></a>
+<hr>
+<h2>Compiling on Windows</h2>
+<p>
+There are two major C++ compilers on Windows:
+<b>Microsoft Visual C++ (MSVC)</b>
+and
+<b>MingW</b>.
+<span class='code'>.sln</span>
+file to make it easy. As a result, for this tutorial we'll use MingW.
+</p>
+<p>
+Firstly, you'll need to download MSYS2 (the build environment for MingW). Download it at:
+<a href='https://www.msys2.org/'>https://www.msys2.org/</a>.
+</p>
+<p>Once MSYS2 is installed, open it. There are a couple different variants it'll install, for 64-bit machines you'll want "MSYS2 MinGW 64-bit" and for 32-bit you'll want "MSYS2 MinGW 32-bit".</p>
+<p>
+In MSYS2, you can now use its package manager
+<span class='code'>pacman</span>
+install Olive's dependencies.
+</p>
+<p>First, make sure your MSYS2 and its packages are up to date with the following command:</p>
+<div class='code'>
+<pre>pacman -Syu</pre>
+</div>
+<p>It may ask you to restart and run the command again. Do so before continuing with this guide.</p>
+<p>Next, install the development tools you'll need to compile Olive with (primarily GCC/G++ and Make). They're all part of the MinGW toolchain.</p>
+<p style='padding-left: 20%;'>
+<b>64-bit:</b>
+</p>
+<div class='code'>
+<pre>pacman -S mingw-w64-x86_64-toolchain make</pre>
+</div>
+<p style='padding-left: 20%;'>
+<b>32-bit:</b>
+</p>
+<div class='code'>
+<pre>pacman -S mingw-w64-i686-toolchain make</pre>
+</div>
+<p>Now to install Qt 5</p>
+<p style='padding-left: 20%;'>
+<b>64-bit:</b>
+</p>
+<div class='code'>
+<pre>pacman -S mingw-w64-x86_64-qt5</pre>
+</div>
+<p style='padding-left: 20%;'>
+<b>32-bit:</b>
+</p>
+<div class='code'>
+<pre>pacman -S mingw-w64-i686-qt5</pre>
+</div>
+<p>Next we'll install FFmpeg the same way.</p>
+<p style='padding-left: 20%;'>
+<b>64-bit:</b>
+</p>
+<div class='code'>
+<pre>pacman -S mingw-w64-x86_64-ffmpeg</pre>
+</div>
+<p style='padding-left: 20%;'>
+<b>32-bit:</b>
+</p>
+<div class='code'>
+<pre>pacman -S mingw-w64-i686-ffmpeg</pre>
+</div>
+<p>
+Olive
+<b>optionally</b>
+implements
+<b>Frei0r</b>,
+<a href='https://github.com/dyne/frei0r'>GitHub</a>
+and place
+<span class='code'>frei0r.h</span>
+(in the
+<span class='code'>include</span>
+folder) in an include directory for the compile process (e.g.
+<span class='code'>C:\msys64\mingw64\include</span>
+for 64-bit or
+<span class='code'>C:\msys64\mingw32\include</span>
+for 32-bit). You'll also likely have to compile them yourself to use the effects in Olive (the MLT website has instructions for
+<a href='https://www.mltframework.org/docs/windowsbuild/' target='_blank'>compiling Frei0r with MSYS2</a>),
+</p>
+<p>
+Now it's time to acquire the source code. You can either download a ZIP directly from
+<a href='https://github.com/olive-editor/olive'>GitHub</a>,
+<span class='code'>git</span>.
+</p>
+<p>To install through git, first install it:</p>
+<div class='code'>
+<pre>pacman -S git</pre>
+</div>
+<p>Then clone the Olive repository:</p>
+<div class='code'>
+<pre>git clone https://github.com/olive-editor/olive.git</pre>
+</div>
+<p>Alternatively, if you downloaded through ZIP, make sure you extract all the files into a folder before proceeding.</p>
+<p>
+Enter the Olive source code directory. If you used git, simply run
+<span class='code'>cd olive</span>.
+<span class='code'>cd</span>
+(keeping the space at the end), and then drag the folder you extracted Olive into to MSYS2. Then press enter and it will enter that directory.
+</p>
+<p>Generate a Makefile:</p>
+<div class='code'>
+<pre>qmake</pre>
+</div>
+<p><b>If you didn't install Frei0r earlier</b>, you'll need to disable it. Otherwise skip this step.
+</p>
+<div class='code'>
+<pre>qmake "DEFINES+=NOFREI0R"</pre>
+</div>
+<p>
+<b>NOTE:</b>
+You may see errors from MSYS2 here like
+<span class='code'>WARNING: Failure to find: debug/resources_res.o</span>
+here. These can be ignored, Olive will compile regardless.
+</p>
+<p>
+All being well, you should now be able to compile Olive.
+</p>
+<div class='code'>
+<pre>make</pre>
+</div>
+Once this process is done, Olive is compiled! In the source code folder, you should be able to find and run
+<span class='code'>olive-editor.exe</span>.
+<a id='mac'></a>
+<hr>
+<h2>Compiling on macOS</h2>
+<p>
+Open up
+<b>Terminal</b>
+and use the following instructions to build Olive from source.
+</p>
+<p>First we'll need our build environment and compilers, which on the Mac come in the form of Xcode. Install Xcode Command Line Tools by typing:</p>
+<div class='code'>
+<pre>xcode-select --install</pre>
+</div>
+<p>
+Next, there are a few different ways to install the Qt and FFmpeg dependencies, but the easiest is to install the
+<b>Homebrew</b>
+package manager and install both through it.
+</p>
+<p>
+To install Homebrew, follow the instructions on
+<a href='https://brew.sh/'>the official website</a>.
+</p>
+<p>Once Homebrew is installed, use it to install Qt 5:</p>
+<div class='code'>
+<pre>brew install qt5</pre>
+</div>
+<p>And then FFmpeg:</p>
+<div class='code'>
+<pre>brew install ffmpeg</pre>
+</div>
+<p>
+An optional dependency is
+<b>Frei0r</b>
+to allow many more extra video effects. It's not essential, but to install it, use:
+</p>
+<div class='code'>
+<pre>brew install frei0r</pre>
+</div>
+<p>By this point, all dependencies should be installed. Grab a copy of the source code with:</p>
+<div class='code'>
+<pre>git clone https://github.com/olive-editor/olive.git</pre>
+</div>
+<p>Enter the Olive folder:</p>
+<div class='code'>
+<pre>cd olive</pre>
+</div>
+<p>Generate a Makefile:</p>
+<div class='code'>
+<pre>qmake</pre>
+</div>
+<p><b>
+If
+<span class='code'>qmake</span>
+doesn't work
+</b>, you could try these options:
+</p>
+<div style='margin-left: 2em;'>
+<p>1. Force the link of the just installed Qt5:</p>
+<div class='code'>
+<pre>brew link qt5 --forces</pre>
+</div>
+<p>2. if the previous one doesn't work try:</p>
+<div class='code'>
+<pre>brew info qt&#x000A;echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> ~/.bash_profile&#x000A;export LDFLAGS="-L/usr/local/opt/qt/lib"&#x000A;export CPPFLAGS="-I/usr/local/opt/qt/include"&#x000A;export PKG_CONFIG_PATH="/usr/local/opt/qt/lib/pkgconfig"&#x000A;. ~/.bash_profile</pre>
+</div>
+</div>
+<p><b>If you didn't install Frei0r earlier</b>, you'll need to disable it. Otherwise skip this step.
+</p>
+<div class='code'>
+<pre>qmake "DEFINES+=NOFREI0R"</pre>
+</div>
+<p>
+Finally run
+<span class='code'>make</span>
+to compile Olive:
+</p>
+<div class='code'>
+<pre>make</pre>
+</div>
+<p>
+Once
+<span class='code'>make</span>
+is complete Olive should be ready to run, so open the folder with Finder and launch the new .app file.
+</p>
+<p>Enjoy!</p>
+<a id='linux'></a>
+<hr>
+<h2>Compiling on Linux</h2>
+<p>
+Depending on your distribution, the provided package manager should include recent enough versions of both of these dependencies. For demonstration purposes, we shall use
+<b>Ubuntu 18.04</b>,
+</p>
+<p>
+Open up
+<b>Terminal</b>
+and use the following instructions to build Olive from source.
+</p>
+<p>First our build environment:</p>
+<div class='code'>
+<pre>sudo apt-get install build-essential</pre>
+</div>
+<p>Next, we'll need to install Qt 5:</p>
+<div class='code'>
+<pre>sudo apt-get install qt5-default qtmultimedia5-dev libqt5multimedia5 libqt5multimedia5-plugins libqt5svg5-dev</pre>
+</div>
+<p>Olive relies on Qt's multimedia module and plugins to play audio, which are not installed by default, so we have to add them manually here. If Olive plays no sound on your setup, it's very likely you don't have Qt multimedia plugins installed.</p>
+<p>Qt also provides an official Linux installer on [their website](https://qt.io/) which, depending on your distribution, may provide you with a much more recent version.</p>
+<p>To install the FFmpeg libraries necessary for building:</p>
+<div class='code'>
+<pre>sudo apt-get install libavformat-dev libavcodec-dev libavfilter-dev libavutil-dev libswscale-dev libswresample-dev</pre>
+</div>
+<p>Olive's format/codec support is provided more or less entirely by FFmpeg. While the FFmpeg build from your distribution's package manager should cover most of the major formats in use today, compiling it from source will give you full control over which codecs it (and hence Olive) will be able to support. Check [FFmpeg's compilation guide](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu) for more information.</p>
+<p>
+An optional dependency is
+<b>Frei0r</b>
+to allow many more extra video effects. It's not essential, but to install it, use:
+</p>
+<div class='code'>
+<pre>sudo apt-get install frei0r-plugins-dev frei0r-plugins</pre>
+</div>
+<p>By this point, all dependencies should be installed. Grab a copy of the source code with:</p>
+<div class='code'>
+<pre>git clone https://github.com/olive-editor/olive.git</pre>
+</div>
+<p>Enter the Olive folder:</p>
+<div class='code'>
+<pre>cd olive</pre>
+</div>
+<p>Generate a Makefile:</p>
+<div class='code'>
+<pre>qmake</pre>
+</div>
+<p><b>If you didn't install Frei0r earlier</b>, you'll need to disable it. Otherwise skip this step.
+</p>
+<div class='code'>
+<pre>qmake "DEFINES+=NOFREI0R"</pre>
+</div>
+<p>
+And finally run
+<span class='code'>make</span>
+to compile Olive:
+</p>
+<div class='code'>
+<pre>make</pre>
+</div>
+<p>
+Optionally, run
+<span class='code'>make install</span>
+to install Olive on your computer:
+</p>
+<div class='code'>
+<pre>sudo make install</pre>
+</div>
+<p>
+Once
+<span class='code'>make</span>
+is complete, Olive should be ready to run.
+</p>
+<div class='code'>
+<pre>./olive-editor</pre>
+</div>
+Enjoy!
+<hr>
+<p>
+Your platform not listed here?
+<a href='https://github.com/olive-editor/olive/issues'>Request it!</a>
+</p>
+</div>
+</div>
+</section>
+<nav class='solid' id='menu-holder'>
+<a href='index.html'>
+<div class='logo'>Olive Editor</div>
+</a>
+<input hidden id='mobilemenu' type='checkbox'>
+<label for='mobilemenu'></label>
+<ul id='mainmenu'>
+<li>
+<a href='download.html'>Download</a>
+</li>
+<li>
+<a href='https://github.com/olive-editor/olive/issues'>Report Bugs</a>
+</li>
+<li>
+<a href='https://github.com/olive-editor/olive/wiki'>Wiki</a>
+</li>
+<li>
+<a href='https://olivevideoeditor.org/donate.php'>Donate</a>
+</li>
+<li>
+<a href='https://www.patreon.com/olivevideoeditor'>Patreon</a>
+</li>
+<li>
+<a href='https://twitter.com/oliveteam'>Twitter</a>
+</li>
+<li>
+<a href='https://www.reddit.com/r/olive/'>Reddit</a>
+</li>
+</ul>
+</nav>
+
+<footer>
+&copy; 2018, 2019 Olive Team.
+</footer>
+
+</body>
+</html>

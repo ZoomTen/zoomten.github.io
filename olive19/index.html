@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Olive Video Editor</title>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='#1B300C' name='theme-color'>
+<link href='style.css' rel='stylesheet'>
+</head>
+<body>
+<section id='intro'>
+<div class='content'>
+<div class='logo'></div>
+<h1>
+Olive Video Editor
+<span class='versionnumber'>0.2.0-prealpha</span>
+</h1>
+<p>
+Olive welcomes you to the
+future of video editing.
+</p>
+<p>
+What are you waiting for?
+</p>
+<div id='mainbuttons'>
+<a class='button cta' href='download.html' role='button'>
+Get it now
+</a>
+<a class='button' href='https://github.com/olive-editor/olive' role='button'>
+Source code
+</a>
+</div>
+<div aria-hidden='true' class='skiparrow'>
+<a href='javascript:void(0)' onclick='document.querySelector(&#39;#what&#39;).scrollIntoView({ behavior: &#39;smooth&#39;, block: &#39;end&#39;});'>▼</a>
+</div>
+</div>
+</section>
+<section id='what'>
+<div class='content'>
+<h1>
+What is Olive?
+</h1>
+<p>
+Olive is a
+video editor that aims to provide a fully-featured alternative
+to high-end, "professional" video editing software. It is a
+fast, modern,
+non-linear editing software that can be used for anything from
+cat videos to the big screen.
+</p>
+<p>
+It is cross-platform, running on Windows, macOS and Linux, among
+other systems. It's free, libre and open-source, licensed under GPLv3.
+That means you're free to look at Olive's source code and
+improve it as you see fit.
+</p>
+<p>
+Although it is both free as in freedom as well as free as in beer,
+you can help its development by becoming our <a href="#">Patron</a>.
+</p>
+<img alt='Olive Video Editor screenshot' class='screenshot' src='assets/olive-apr-19.JPG'>
+</div>
+</section>
+<section class='featured' id='features'>
+<div class='content'>
+<h1>
+What can it do (so far)?
+</h1>
+<input checked='checked' hidden id='carousel-1' name='carousel' type='radio'>
+<input hidden id='carousel-2' name='carousel' type='radio'>
+<input hidden id='carousel-3' name='carousel' type='radio'>
+<input hidden id='carousel-4' name='carousel' type='radio'>
+<input hidden id='carousel-5' name='carousel' type='radio'>
+<input hidden id='carousel-6' name='carousel' type='radio'>
+<input hidden id='carousel-7' name='carousel' type='radio'>
+<div class='carousel-nav'>
+<label aria-hidden='true' for='carousel-1'></label>
+<label aria-hidden='true' for='carousel-2'></label>
+<label aria-hidden='true' for='carousel-3'></label>
+<label aria-hidden='true' for='carousel-4'></label>
+<label aria-hidden='true' for='carousel-5'></label>
+<label aria-hidden='true' for='carousel-6'></label>
+<label aria-hidden='true' for='carousel-7'></label>
+</div>
+<div class='carousel-slides'>
+<div class='inner'>
+<div class='item'>
+<div class='text-column'>
+<h2>OCIO support</h2>
+<p>
+<abbr title='OpenColorIO'>OCIO</abbr>
+is a technology
+that allows you to work in a consistent,
+color-managed workflow, ensuring that what you do looks
+right anywhere.
+</p>
+</div>
+<div class='image-column'>
+<img alt='Color Management in Olive' height='300' src='assets/Ocio_old_management.png'>
+</div>
+</div>
+<div class='item'>
+<div class='text-column'>
+<h2>Realtime, GPU-accelerated previewing</h2>
+<p>
+Olive is OpenGL-powered, which can use your GPU to
+accelerate rendering by a TON! You don't need to see
+individual pixels or render at half-resolution anymore!
+</p>
+<p>
+You can still make proxy clips if you need to, though!
+Just in case.
+</p>
+</div>
+<div class='image-column'>
+<img alt='GPU Support' height='300' src='https://futurefive.co.nz/uploads/story/2018/11/12/Nvidia_RTX_00.jpg'>
+</div>
+</div>
+<div class='item'>
+<div class='text-column'>
+<h2>4K+</h2>
+<p>
+Because of the sheer speed of Olive's previewer, that
+means you can edit 4K and even 8K videos as fast as
+you can view them. Stack them, cut them, go crazy with
+them.
+</p>
+</div>
+<div class='image-column'>
+<img alt='4K Editing' height='300' src='assets/ohwow4k.png'>
+</div>
+</div>
+<div class='item'>
+<div class='text-column'>
+<h2>Wide array of effects</h2>
+<p>
+Olive's effects are written in the OpenGL Shading Language,
+which are already used in the web to create stunning effects.
+Now you can bring the magic to your videos as well.
+</p>
+<p>
+The community has made a large number of effects that adds
+functionality to Olive, including, among other things,
+the ability to edit 360° video.
+</p>
+</div>
+<div class='image-column'>
+<img alt='GLSL Sample' height='300' src='https://i.ytimg.com/vi/QcuBX0pNLKY/maxresdefault.jpg'>
+</div>
+</div>
+<div class='item'>
+<div class='text-column'>
+<h2>Imports everything</h2>
+<p>
+No more fussing with codecs! Olive will take care of
+your old videos through the versatile, built-in FFMPEG tools.
+Videos, pictures, image sequences... Anything.
+</p>
+</div>
+<div class='image-column'>
+<img alt='Importing' height='300' src='https://i.imgur.com/8pSVa92.png'>
+</div>
+</div>
+<div class='item'>
+<div class='text-column'>
+<h2>Node-based</h2>
+<p>
+If Olive's effects are toy blocks, then node graphs
+are the impressive structures you make from it.
+</p>
+<p>
+With the Node Editor, you can create a more dynamic
+range of effects for your productions.
+</p>
+</div>
+<div class='image-column'>
+<img alt='Node Graph' height='300' src='assets/nodeedit.png'>
+</div>
+</div>
+<div class='item'>
+<div class='single-column'>
+<h2>More to come...</h2>
+<p>
+More new and exciting features will come to Olive. Stay tuned!
+</p>
+<p>
+Even if Olive is missing something you need, come back in a
+while and it's possible it will have been implemented.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id='alpha'>
+<div class='content'>
+<h1>How is it?</h1>
+<p>
+Olive is making rapid progress and users are already producing
+videos with it, but it's still currently in <strong>alpha</strong> meaning it is
+incomplete and not fully stable.
+</p>
+<p>
+Regardless, we invite you to <a href="download.html">download the latest build</a>
+and try it out for yourself!
+</p>
+<p>
+Have fun, and enjoy experimenting in Olive!
+</p>
+</div>
+</section>
+<nav class='solid' id='menu-holder'>
+<a href='index.html'>
+<div class='logo'>Olive Editor</div>
+</a>
+<input hidden id='mobilemenu' type='checkbox'>
+<label for='mobilemenu'></label>
+<ul id='mainmenu'>
+<li>
+<a href='download.html'>Download</a>
+</li>
+<li>
+<a href='https://github.com/olive-editor/olive/issues'>Report Bugs</a>
+</li>
+<li>
+<a href='https://github.com/olive-editor/olive/wiki'>Wiki</a>
+</li>
+<li>
+<a href='https://olivevideoeditor.org/donate.php'>Donate</a>
+</li>
+<li>
+<a href='https://www.patreon.com/olivevideoeditor'>Patreon</a>
+</li>
+<li>
+<a href='https://twitter.com/oliveteam'>Twitter</a>
+</li>
+<li>
+<a href='https://www.reddit.com/r/olive/'>Reddit</a>
+</li>
+</ul>
+</nav>
+
+<footer>
+&copy; 2018, 2019 Olive Team.
+</footer>
+<script>
+  (function (window, document) {
+    navbar_target = document.getElementById("menu-holder")
+    navbar_target.classList.remove('solid');
+    window.addEventListener("scroll",
+      function(){
+        winscroll = document.documentElement.scrollTop;
+        if (winscroll < 50){
+          navbar_target.classList.remove('solid');
+        } else {
+          navbar_target.classList.add('solid');
+        }
+      }
+    );
+  })(this, this.document);
+</script>
+
+</body>
+</html>
