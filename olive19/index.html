@@ -31,7 +31,7 @@ Source code
 </a>
 </div>
 <div aria-hidden='true' class='skiparrow'>
-<a href='javascript:void(0)' onclick='document.querySelector(&quot;#what&quot;).scrollIntoView({ behavior: &quot;smooth&quot;, block: &quot;end&quot;});'>▼</a>
+<a href='javascript:void(0)' onclick='doScroll();'>▼</a>
 </div>
 </div>
 </section>
@@ -261,5 +261,10 @@ Have fun, and enjoy experimenting in Olive!
   })(this, this.document);
 </script>
 
+<script>
+  function doScroll(){
+    document.querySelector("#what").scrollIntoView({ behavior: "smooth", block: "end"});
+  }
+</script>
 </body>
 </html>
