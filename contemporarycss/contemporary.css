@@ -1,0 +1,211 @@
+.contemporary {
+  --bg-color:#282828;
+  --fg-color:#fff;
+  --fg-color-transparent:rgba(255,255,255,.2);
+  --bg-hover:#3c3c3c;
+  --bg-active:#1b1b1b;
+  --link-color:rgb(0, 200, 255);
+  --link-active-color:rgb(255, 100, 100);
+  --sel-color:rgb(0, 80, 170);
+  --sel-hover:rgb(20, 60, 105);
+  --accent-color:rgb(0, 50, 150);
+  --accent-hover:rgb(0, 75, 225);
+  --accent-active:rgb(0, 33, 100);
+  scrollbar-color: var(--accent-color) var(--bg-color); }
+  .contemporary.light {
+    --bg-color:#d2d2d2;
+    --fg-color:#000;
+    --fg-color-transparent:rgba(0,0,0,.2);
+    --bg-hover:#fff;
+    --bg-active:#9d9d9d;
+    --link-color:rgb(0, 55, 255);
+    --link-active-color:red;
+    --sel-color:rgb(0, 200, 255);
+    --sel-hover:rgb(20, 220, 255);
+    --accent-color:rgb(0, 200, 255);
+    --accent-hover:rgb(127,228, 255);
+    --accent-active:rgb(0, 133, 170); }
+    .contemporary.light select {
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%20300%20300-300v300z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E"); }
+    .contemporary.light code {
+      background-color: rgba(0, 0, 0, 0.1); }
+  .contemporary *, .contemporary *:before, .contemporary *:after {
+    box-sizing: border-box; }
+  .contemporary ::-moz-range-thumb {
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    background: var(--accent-color);
+    border-radius: 0;
+    border: 1px solid var(--fg-color); }
+  .contemporary ::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: var(--bg-color); }
+  .contemporary ::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1em;
+    height: 1em;
+    background: var(--accent-color);
+    border-radius: 0;
+    border: 1px solid var(--fg-color); }
+  .contemporary ::-webkit-scrollbar-thumb {
+    background: var(--accent-color); }
+  .contemporary ::-webkit-scrollbar-corner {
+    background: var(--bg-color); }
+  .contemporary body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: 'Contemporary', sans-serif;
+    max-width: 80em;
+    margin: 0 auto;
+    padding: .6em 2em; }
+  .contemporary h3, .contemporary h2, .contemporary h1 {
+    margin-bottom: .2em;
+    padding-bottom: .2em; }
+  .contemporary input[type="submit"], .contemporary button, .contemporary a.button {
+    font-family: inherit;
+    border: 0;
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--fg-color);
+    padding: 0.6em 0.8em;
+    text-decoration: none; }
+  .contemporary input[type="submit"]:hover, .contemporary button:hover, .contemporary a.button:hover {
+    background-color: var(--accent-hover); }
+  .contemporary button.cta, .contemporary a.button.cta {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px); }
+  .contemporary button.cta:active, .contemporary button.cta:hover, .contemporary a.button.cta:active, .contemporary a.button.cta:hover {
+    background-color: rgba(255, 255, 255, 0.5); }
+  .contemporary input[type="submit"]:active, .contemporary button:active, .contemporary a.button:active {
+    background-color: var(--accent-active); }
+  .contemporary input[type="search"], .contemporary input[type="range"], .contemporary input[type="number"], .contemporary select, .contemporary input[type="checkbox"], .contemporary input[type="radio"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    outline: 0; }
+  .contemporary select:disabled, .contemporary input:disabled, .contemporary textarea:disabled, .contemporary input[type="checkbox"]:disabled + label:before, .contemporary input[type="checkbox"]:disabled + label:after, .contemporary input[type="radio"]:disabled + label:before, .contemporary input[type="radio"]:disabled + label:after {
+    opacity: 0.5; }
+  .contemporary h1 {
+    border-bottom: 1px solid var(--fg-color);
+    font-size: 1.666em; }
+  .contemporary h2 {
+    font-size: 1.4em;
+    border-bottom: 1px solid var(--fg-color-transparent);
+    display: inline-block; }
+  .contemporary h3 {
+    font-size: 1.25em; }
+  .contemporary p, .contemporary ul, .contemporary ol {
+    margin: .3em 0;
+    line-height: 1.7em; }
+  .contemporary img {
+    max-width: 100%;
+    height: auto; }
+  .contemporary figure {
+    border: 1px solid var(--fg-color);
+    display: inline-block;
+    margin: .2em; }
+  .contemporary figcaption {
+    margin: .2em; }
+  .contemporary a {
+    color: var(--link-color); }
+    .contemporary a:active {
+      color: var(--link-active-color); }
+  .contemporary input[type="checkbox"], .contemporary input[type="radio"] {
+    appearance: none;
+    position: absolute;
+    visibility: hidden; }
+    .contemporary input[type="checkbox"] + label, .contemporary input[type="radio"] + label {
+      position: relative; }
+    .contemporary input[type="checkbox"] + label:before, .contemporary input[type="radio"] + label:before {
+      content: '';
+      display: inline-block;
+      vertical-align: text-top;
+      margin-right: .25em;
+      width: 1em;
+      height: 1em;
+      border: 1px solid var(--fg-color); }
+    .contemporary input[type="checkbox"]:checked + label:after, .contemporary input[type="radio"]:checked + label:after {
+      background-color: var(--fg-color);
+      content: '';
+      display: inline-block;
+      vertical-align: text-top;
+      margin-right: .25em;
+      width: 1em;
+      height: 1em;
+      left: 0;
+      top: 0;
+      position: absolute; }
+  .contemporary input[type="radio"] + label:before {
+    border-radius: 100%;
+    width: 14px;
+    height: 14px;
+    vertical-align: text-top;
+    border: 2px solid var(--bg-color);
+    box-shadow: 0 0 0 1px var(--fg-color); }
+  .contemporary input[type="radio"]:checked + label:after {
+    border-radius: 100%;
+    width: 14px;
+    height: 14px; }
+  .contemporary input, .contemporary textarea {
+    font-family: inherit;
+    background: none;
+    padding: .4em;
+    color: var(--fg-color);
+    border: 1px solid var(--fg-color); }
+  .contemporary select {
+    background: none;
+    padding: .2em;
+    padding-right: 1em;
+    color: var(--fg-color);
+    border: 1px solid var(--fg-color);
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%20300%20300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%20300%20300-300v300z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right .1em bottom .1em;
+    background-size: 0.5em; }
+    .contemporary select::-ms-expand {
+      display: none; }
+  .contemporary input[type="range"] {
+    padding: 0;
+    height: 1em; }
+  .contemporary input[type="search"] {
+    border-right: none;
+    border-top: none; }
+  .contemporary fieldset {
+    border: 1px solid var(--fg-color); }
+  .contemporary table {
+    border-spacing: 0;
+    border-collapse: collapse; }
+    .contemporary table th, .contemporary table td {
+      border: 1px solid var(--fg-color);
+      margin: 0;
+      padding: .3em .5em; }
+    .contemporary table th {
+      background-color: var(--accent-color); }
+  .contemporary code {
+    font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: .5em  .7em;
+    display: block;
+    overflow: auto; }
+  .contemporary p > code {
+    display: inline-block;
+    vertical-align: middle;
+    padding: .1em .3em; }
+  .contemporary .row {
+    display: block; }
+  .contemporary .col {
+    display: inline; }
+  @media (min-width: 48em) {
+    .contemporary .row {
+      width: 100%;
+      display: table;
+      table-layout: fixed; }
+    .contemporary .col {
+      display: table-cell;
+      padding-right: 2%; }
+    .contemporary .col:last-child {
+      padding-left: 2%;
+      padding-right: 0; } }
