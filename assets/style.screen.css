@@ -1,0 +1,269 @@
+/* jason knight's reset */
+html,body,address,blockquote,div,
+form,fieldset,caption,
+h1,h2,h3,h4,h5,h6,
+hr,ul,li,ol,ul,
+table,tr,td,th,p,img {
+	margin:0;
+	padding:0;
+}
+
+img, fieldset {
+	border:none;
+}
+
+table {
+	font-size:100%;
+	line-height:150%;
+}
+
+hr {
+	display:none;
+}
+
+/* border-box dogma */
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+/******************************************************************/
+
+body {
+	font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.7)), url('clouds.png');
+	background-size: cover;
+	background-attachment: fixed;
+	color: #fff;
+	padding-top: 6em;
+	overflow-y: scroll;
+}
+
+#main-header {
+	font-size: 1em;
+	border-top: 1px solid rgba(255,255,255,.5);
+	border-bottom: 1px solid rgba(255,255,255,.2);
+	background: rgba(0,0,0,.8);
+	background-image: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 6%, rgba(255,255,255,0) 17%, rgba(255,255,255,0.1) 29%, rgba(255,255,255,0) 35%, rgba(255,255,255,0.1) 65%, rgba(255,255,255,0) 68%, rgba(255,255,255,0) 83%, rgba(255,255,255,0.1) 89%, rgba(255,255,255,0) 93%);
+	backdrop-filter: blur(20px);
+	position: fixed;
+	top: 1em;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 2em);
+	max-width: 100em;
+	padding: 1.5em 3em;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 99em;
+	z-index: 2;
+	box-shadow:
+		3px 3px 10px rgba(0,0,0,.3);
+}
+
+h1 {
+	font-size: 1em;
+}
+
+#main-menu ul {
+	display: flex;
+	list-style: none;
+}
+
+#main-menu li {
+	padding-left: 2em;
+}
+
+a {
+	color: inherit;
+}
+
+section {
+	text-align: center;
+	line-height: 1.7em;
+	margin: auto;
+	max-width: 100em;
+	padding: 1em 2em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1em;
+	text-shadow:
+		0 3px 5px rgba(0,0,0,.9);
+}
+
+section > header {
+	width: 100%;
+	padding: 2em 0;
+}
+
+section article {
+	border-top: 1px solid rgba(255,255,255,.5);
+	border-bottom: 1px solid rgba(255,255,255,.2);
+	text-align: center;
+	width: 100%;
+	max-width: 25em;
+	border-radius: 10px;
+	position: relative;
+	padding-bottom: 4.5em;
+	box-shadow:
+		3px 3px 12px rgba(0,0,0,.6);
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0,0,0,.5);
+	background-image: linear-gradient(#000, transparent);
+	backdrop-filter: blur(25px);
+}
+
+section article *:not(ul) {
+	height: 100%;
+}
+
+section article img {
+	width: 100%;
+	height: 16em;
+	min-height: 16em;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+	border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+section article h3, section article p {
+	padding: 0 2em;
+}
+
+section article h3 {
+	line-height: 1.25em;
+	margin-top: .5em;
+	margin-bottom: .4em;
+}
+
+section article .actions {
+	bottom: 1em;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.actions {
+	list-style-type: none;
+	display: flex;
+}
+
+.actions li {
+	display: inline;
+	margin-right: 1em;
+}
+
+.actions a {
+	display: inline-block;
+	border-top: 1px solid rgba(255,255,255,.5);
+	padding: .25em 1em;
+	border-radius: 5px;
+	background-color: #222;
+	transition: .1s all;
+	transform: scale(1);
+	text-decoration: none;
+	text-transform: uppercase;
+	text-shadow: none;
+	font-weight: bold;
+	font-size: .8em;
+	letter-spacing: .1em;
+	user-select: none;
+	/* we have the technology, why aren't we doing this?! */
+	box-shadow:
+		4px 4px 5px rgba(0,0,0,.4),
+		0 0 5px inset rgba(255,255,255,.1);
+}
+
+.actions li:nth-of-type(1) a {
+	background-color: #522;
+	border-top: 1px solid rgba(255,128,128,.5);
+}
+
+.actions li:nth-of-type(1) a:active {
+	border-top: 1px solid #000;
+}
+
+.actions li._discord a {
+	background-color: #326;
+}
+
+.actions a:active {
+	border-top: 1px solid #000;
+	box-shadow:
+		0px 0px 3px rgba(0,0,0,.4),
+		0 2px 8px inset #000;
+	transform: scale(.98);
+}
+
+h2,h3 {
+	letter-spacing: -.03em;
+}
+
+h2 {
+	margin-bottom: .3em;
+	line-height: 1.25em;
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+
+footer {
+	text-align: center;
+	padding: 8em 0 4em 0;
+	opacity: .6;
+}
+
+@media screen and (max-width: 48em) {
+	.actions a {
+		padding: .1em .8em;
+		font-size: .6em;
+	}
+	section article *:not(ul) {
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 64em) {
+	#main-menu:before {
+		content: "Menu";
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 1em;
+		height: 4em;
+		padding: 0 2em;
+		line-height: 4em;
+		text-decoration: underline;
+	}
+	
+	#main-menu:hover ul {
+		position: fixed;
+		top: 2em;
+		right: 1em;
+		background-color: #111;
+		padding: .5em 2em;
+		text-align: right;
+		margin-top: 2em;
+		border-radius: 7px;
+	}
+	
+	#main-menu:hover ul, #main-menu ul:hover {
+		display: block;
+	}
+	
+	#main-menu ul {
+		display:none;
+	}
+	
+	#main-menu li {
+		padding: 1em 0;
+	}
+}
