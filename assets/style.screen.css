@@ -43,21 +43,6 @@ body {
 	overflow-y: scroll;
 }
 
-body:before {
-	display: block;
-	content: "";
-	width: 100vw;
-	left: 0;
-	top: 2.5em;
-	position: fixed;
-	height: 1em;
-	background: rgba(0,0,0,.5);
-	background-image: linear-gradient(#000, transparent);
-	border-top: 1px solid rgba(255,255,255,.5);
-	border-bottom: 1px solid rgba(255,255,255,.2);
-	z-index: -444;
-}
-
 #main-header {
 	font-size: 1em;
 	border-top: 1px solid rgba(255,255,255,.5);
