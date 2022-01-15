@@ -94,6 +94,7 @@ doScrollPage(0);
 // detects if the window is still scrolling
 window.addEventListener("scroll", (e)=>{
 	window.scrollTo(0, 0);
+	console.log("d");
 });
 
 // scrolljack

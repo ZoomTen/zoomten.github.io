@@ -28,6 +28,8 @@ hr {
 	--page-2: #400;
 	--page-3: #006;
 	--page-4: #045;
+	
+	--animation-duration: .35s;
 }
 
 body {
@@ -154,7 +156,7 @@ p {
 }
 /* responsive */
 
-@media screen and (max-width: 48em) {
+@media screen and (max-width: 56em) {
 	body {
 		font-size: .8em;
 	}
@@ -179,6 +181,12 @@ p {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
+	animation: .5s fade-in;
+}
+
+@keyframes fade-in {
+	from { opacity: 0; }
+	to   { opacity: 1; }
 }
 
 .js section {
@@ -189,6 +197,7 @@ p {
 	width: 100%;
 	height: 100%;
 	transform: translateY(100%);
+	opacity: 0;
 }
 
 @keyframes up {
@@ -197,8 +206,8 @@ p {
 		opacity: 1;
 	}
 	to {
-		transform: translateY(-50%);
-		opacity: 0;
+		transform: translateY(-100%);
+		opacity: 1;
 	}
 }
 
@@ -208,30 +217,33 @@ p {
 		opacity: 1;
 	}
 	to {
-		transform: translateY(50%);
-		opacity: 0;
+		transform: translateY(100%);
+		opacity: 1;
 	}
 }
 
 .js section.-active.-inverse {
-	animation: up reverse .2s ease-in;
-	transition: .2s transform;
+	animation: up reverse var(--animation-duration) ease-in;
+	transition: var(--animation-duration) transform;
+	opacity: 1;
 }
 .js section.-previous.-inverse {
-	animation: down .2s ease-out;
+	animation: down var(--animation-duration) ease-out;
 	transform: translateY(100%);
-	transition: .2s transform;
+	transition: var(--animation-duration) transform;
+	opacity: 1;
 }
 .js section.-active {
-	animation: down reverse .2s ease-in;
+	animation: down reverse var(--animation-duration) ease-in;
 	transform: translateY(0);
-	transition: .2s transform;
+	transition: var(--animation-duration) transform;
+	opacity: 1;
 }
 .js section.-previous {
-	animation: up .2s ease-out;
+	animation: up var(--animation-duration) ease-out;
 	transform: translateY(-100%);
-	opacity: 0;
-	transition: .2s transform;
+	transition: var(--animation-duration) transform;
+	opacity: 1;
 }
 
 .js:-webkit-scrollbar {
