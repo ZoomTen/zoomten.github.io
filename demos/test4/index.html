@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Per-word animation</title>
+		<link rel="stylesheet" href="style.css" media="screen">
+		<meta name='viewport' content='width=device-width,height=device-height,initial-scale=1'>
+	</head>
+	
+	<body>
+		<!-- we have presentational garbage here, but eh -->
+		<h1 class="-with-words -animate -fx-fly-in-from-left" data-delay="120">
+			Lorem Ipsum is simply dummy text
+		</h1>
+		<p class="-with-words -animate -fx-fly-in-from-bottom" data-delay="23">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat odio vitae sem convallis venenatis.
+			Mauris aliquet porta eros, et eleifend lacus. In hac habitasse platea dictumst. Praesent tincidunt,
+			nisi id imperdiet varius, sapien arcu pharetra nisl, eget commodo mi est non dui. In dictum blandit
+			mauris, non rutrum arcu auctor id. Fusce dignissim tristique augue nec aliquam. Donec blandit elit non
+			nisi laoreet aliquam. Cras iaculis est magna, at egestas purus dignissim a. Mauris turpis nisl,
+			porttitor quis mattis ac, suscipit ut eros. Quisque quis libero finibus, malesuada ex sed, ultrices
+			arcu. Donec nibh lacus, viverra ac neque eu,
+			fermentum congue arcu.
+		</p>
+		<h2 class="-animate -with-words -fx-fly-in-from-bottom" data-delay="140">
+			CSS classes are hooked on with JavaScript
+		</h1>
+		<p>
+			You would say "animate this element: with words, fly them in from
+			the bottom" by <code>-animate -with-words -fx-fly-in-from-bottom</code>
+			on the class attribute.
+		</p>
+		
+		<script src="script.js"></script>
+	</body>
+</html>

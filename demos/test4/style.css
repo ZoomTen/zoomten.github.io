@@ -1,0 +1,84 @@
+/* new reset */
+html,body,div,p,h1,h2,h3,h4,h5,h6,
+ul,ol,li,dl,dt,dd,form,fieldset,caption,
+table,tr,td,th,address,blockquote,img {
+	margin:0;
+	padding:0;
+}
+
+img, fieldset, object {
+	border:none;
+}
+
+*, *:after, *:before {
+	flex:1 0 auto; /* safari bugfix */
+	box-sizing:border-box;
+}
+
+button, label {
+	cursor:pointer;
+}
+
+html, body {
+	height:100%;
+	overflow: hidden;
+}
+
+hr {
+	display:none;
+}
+
+body, button, input, table, textarea, select {
+	font:normal 1em/1.5 Inter,Arial,Helvetica,sans-serif;
+}
+
+/****************************************************/
+
+.-before, .-after {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	line-height: 1em;
+}
+
+.-before > *, .-after > * {
+	position: relative;
+}
+
+.-animate .-has-space {
+	width: .2em;
+}
+
+.-animate.-fx-fly-in-from-left .-before > *{
+	left: -100%;
+	transition: .5s left;
+}
+
+.-animate.-fx-fly-in-from-left .-after > * {
+	left: 0;
+	transition: .5s left;
+}
+
+.-animate.-fx-fly-in-from-bottom .-before > *{
+	top: 2em;
+	transition: .5s top;
+}
+
+.-animate.-fx-fly-in-from-bottom .-after > * {
+	top: 0;
+	transition: .5s top;
+}
+
+/****************************************************/
+
+body {
+	line-height: 1.7;
+	padding: 2em;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		background:#522;
+		color: #fff;
+	}
+}
