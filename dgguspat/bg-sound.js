@@ -759,7 +759,7 @@
 				}
 				_loadSong(e)
 				{
-					const t = this._lib._mid_alloc_options(44100, 32784, d, p),
+					const t = this._lib._mid_alloc_options(this._audioContext.sampleRate, 32784, d, p),
 						n = this._lib._malloc(e.byteLength);
 					this._lib.HEAPU8.set(e, n);
 					const r = this._lib._mid_istream_open_mem(n, e.byteLength),
