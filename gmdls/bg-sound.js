@@ -3662,7 +3662,7 @@
 				}
 				connectedCallback()
 				{
-					document.addEventListener("click", this._onClick), this.hasAttribute("baseUrl") || this.setAttribute("baseUrl", "https://zoomten.github.io/dgguspat/"), this.hasAttribute("loop") || this.setAttribute("loop", 1), this.playCount = 0, this._initPlayer()
+					document.addEventListener("click", this._onClick), this.hasAttribute("baseUrl") || this.setAttribute("baseUrl", "https://zoomten.github.io/gmdls/"), this.hasAttribute("loop") || this.setAttribute("loop", 1), this.playCount = 0, this._initPlayer()
 				}
 				disconnectedCallback()
 				{
