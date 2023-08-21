@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="style.xsl" type="text/xsl"?>
+<blog>
+    <info>
+        <name>XML for websites: the deep dive</name>
+        <date>2021-11-23</date>
+        <summary>
+            In which I take a look at the carcasses left behind
+            by the sheer enthusiasm of early and mid 2000s WWW.
+        </summary>
+        <tags>
+            <tag>xml</tag>
+            <tag>webdev</tag>
+        </tags>
+    </info>
+    <content>
+        <p>
+            You may have been introduced to XML as a sort of sister to HTML,
+            being both applications of the "standard generalized markup language"
+            (SGML) formalized back in the 80s. The difference is that you
+            could use XML to mark up literally <em>anything</em>.
+        </p>
+
+        <sec>Enter stage left, XHTML...</sec>
+
+        <p>
+            Write more content here...
+        </p>
+    </content>
+</blog>
